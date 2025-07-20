@@ -16,5 +16,8 @@ func main() {
 }
 
 func Hello(name string) string {
+	if name == "" {
+		return prefixHelloEnglish + "world"
+	}
 	return prefixHelloEnglish + name
 }
