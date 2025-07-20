@@ -20,13 +20,18 @@ func Hello(name, lang string) string {
 		name = "World"
 	}
 
-	if lang == spanish {
-		return prefixHelloSpanish + name
+	// set valeur par defaut
+	prefix := prefixHelloEnglish
+
+	// use switch for test all case
+	switch lang {
+	case english:
+		prefix = prefixHelloEnglish
+	case french:
+		prefix = prefixHelloFrench
+	case spanish:
+		prefix = prefixHelloSpanish
 	}
 
-	if lang == french {
-		return prefixHelloFrench + name
-	}
-	
-	return prefixHelloEnglish + name
+	return prefix + name
 }

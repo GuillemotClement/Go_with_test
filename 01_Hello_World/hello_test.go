@@ -30,4 +30,5 @@ func TestHello(t *testing.T) {
 		want := "Hola, Jean"
 		checkCorrectMessage(t, got, want)
 	})
+
 }
