@@ -14,15 +14,20 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("should say hello to visitor", func(t *testing.T) {
-		got := Hello("Jean")
+		got := Hello("Jean", "")
 		want := "Hello, Jean"
 		checkCorrectMessage(t, got, want) // utilisation du helper
 	})
 
 	t.Run("should say hello word if no name send", func(t *testing.T) {
-		got := Hello("")
-		want := "Hello, world"
+		got := Hello("", "")
+		want := "Hello, World"
+		checkCorrectMessage(t, got, want)
+	})
 
+	t.Run("should say hello in spanish", func(t *testing.T) {
+		got := Hello("Jean", "Spanish")
+		want := "Hola, Jean"
 		checkCorrectMessage(t, got, want)
 	})
 }
