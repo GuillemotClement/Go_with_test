@@ -20,18 +20,19 @@ func Hello(name, lang string) string {
 		name = "World"
 	}
 
-	// set valeur par defaut
-	prefix := prefixHelloEnglish
+	return prefixHello(lang) + name
+}
 
+func prefixHello(lang string) (prefix string) {
 	// use switch for test all case
 	switch lang {
-	case english:
-		prefix = prefixHelloEnglish
 	case french:
 		prefix = prefixHelloFrench
 	case spanish:
 		prefix = prefixHelloSpanish
+	default:
+		prefix = prefixHelloEnglish
 	}
-
-	return prefix + name
+	// retourne automatiquement le prefix -> déclarer dans le retour de la fonction
+	return
 }
